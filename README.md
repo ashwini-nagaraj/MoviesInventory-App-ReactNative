@@ -1,4 +1,4 @@
-# Movies Inventory App
+# Movies inventory app using react-native
 In this simple react-native app created using expo, mocks a movie DB/Inventory app. Movies are fetched using OMDb API, with unique API Key. 
 It has two simple screens where top 10 movies among search result of API are displayed and upon clicking on these items, you are navigated 
 to a description screen where movie details are dispalyed.
@@ -29,7 +29,7 @@ Go to run "npm install yarn" then "yarn start". Also download and install other 
 
 #### On clicking one of the movies, navigates you to description/details screen ####
 
-#### also to run on ios or android, install the expo app on your phone, scan the QR code generated while running the application in terminal and test it!
+#### Also to run on ios or android, install the expo app on your phone, scan the QR code generated while running the application in terminal and test it!
 
 ### Future Improvements ###
 
