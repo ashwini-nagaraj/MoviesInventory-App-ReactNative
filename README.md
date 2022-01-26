@@ -25,7 +25,7 @@ Go to run "npm install yarn" then "yarn start". Also download and install other 
 
 #### Default error screen on wrong movie name search ####
 
-![image](https://user-images.githubusercontent.com/97677773/151250633-ef0929cc-9a52-4efa-b8e9-4257d80cdc17.png)![image](https://user-images.githubusercontent.com/97677773/149703930-f0c3f295-1e46-4d43-8231-99fd0e3fa5e0.png)
+![image](https://user-images.githubusercontent.com/97677773/151250633-ef0929cc-9a52-4efa-b8e9-4257d80cdc17.png)
 
 #### On clicking one of the movies, navigates you to description/details screen ####
 
