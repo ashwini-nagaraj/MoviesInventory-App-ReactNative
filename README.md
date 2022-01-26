@@ -12,7 +12,7 @@ Go to run "npm install yarn" then "yarn start". Also download and install other 
 
 ### Let's begin !! ###
                         
-![image](https://user-images.githubusercontent.com/97677773/151250293-64a2be88-81e6-48b0-b351-f0cb2d27cf5c.png
+![image](https://user-images.githubusercontent.com/97677773/151250293-64a2be88-81e6-48b0-b351-f0cb2d27cf5c.png)
 
 #### Initial screen - type in the search bar and hit ENTER ####
 
