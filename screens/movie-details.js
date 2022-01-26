@@ -12,7 +12,7 @@ const MovieDetails=({route, plot}) =>{
         <Text style={styles.modalText}>{item.Title}</Text>
         <ImageBackground
         style={{height: 400, width: '100%', backgroundColor: '000'}}
-        resizeMode='conatin'
+        resizeMode='contain'
         source={{uri:item.Poster}}
         ></ImageBackground>
         <Text style={styles.modalText}>Year Released: {item.Year}</Text>
