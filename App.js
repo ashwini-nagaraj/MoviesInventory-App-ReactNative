@@ -1,20 +1,49 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import * as React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import {MaterialCommunityIcons} from '@expo/vector-icons'
 
-export default function App() {
+import Home from './screens/home'
+import MovieDetails from './screens/movie-details'
+
+import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+
+const Tab = createMaterialBottomTabNavigator();
+
+const App = (props) => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Tab.Navigator
+      swipeEnabled
+      initialRoute="Home"
+      activeColor="#FF0000"
+      inactiveColor="#dedede"
+      style={{ backgroundColor: '#000'}}
+      barStyle={{ backgroundColor: '#0f0f0f', padding: 4}}
+      >
+          <Tab.Screen 
+          name="Movies Inventory App"
+          component={Home}
+          options={{
+            tabBarLabel: 'Home',
+            tabBarIcon: ({ color }) => (
+              <MaterialCommunityIcons name="home" color={color} size={28} />
+            ),
+          }}
+           />
+          <Tab.Screen
+          name="Movie Description"
+          component={MovieDetails}
+          options={{
+            tabBarLabel: 'Movie Description',
+            tabBarIcon: ({ color }) => (
+              <MaterialCommunityIcons name="camera-metering-spot" color={color} size={28} />
+            ),
+          }}
+           />
+      </Tab.Navigator>
+    </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
+export default App;
