@@ -24,19 +24,19 @@ const App = () => {
           name="Movies Inventory App"
           component={Home} 
           options={{
+            tabBarLabel: 'Home', 
             tabBarIcon: ({ focused , color}) =>  (
               focused
               ? <MaterialCommunityIcons name="home" color={color} size={28} />
               : <MaterialCommunityIcons name="arrow-left" color={color} size={28} />
-           ),
-           tabBarLabel: 'Home'
+           )
           }}
            />
           <Tab.Screen
           name="Movie Description"
           component={MovieDetails}    
           options={{
-            tabBarLabel: 'Movie Description',
+            tabBarLabel: 'Movie Description', 
             tabBarIcon: ({ color }) => (
               <MaterialCommunityIcons name="camera-metering-spot" color={color} size={28} />
             ),

@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View, ImageBackground} from 'react-native';
 import React from 'react';
 import NOMOVIE_BANNER from '../assets/images/images.jpeg';
+import { ScrollView } from 'react-native-web';
 
 const MovieDetails=({route}) =>{
     const { movie, data } = route?.params || {}; 
@@ -17,7 +18,7 @@ const MovieDetails=({route}) =>{
         resizeMode='contain'
         source={{uri:movie.Poster}}
         ></ImageBackground>
-        <Text style={styles.modalText}>Year Released: {movie.Year}</Text>
+        <Text style={styles.modalText}>Year Relaease: {movie.Year}</Text>
         {data.Genre!== 'N/A' && (
         <Text style={styles.modalText}>Genre: {data.Genre}</Text>)}
           {data.Actors!== 'N/A' && (
@@ -90,7 +91,10 @@ const styles = StyleSheet.create({
     marginBottom:20,
     fontWeight: '500',
     color: '#fff',
-    alignItems: 'center'
+    alignItems: 'center',
+    textAlign: 'center',
+    margin: 400
+
   }
 });
 

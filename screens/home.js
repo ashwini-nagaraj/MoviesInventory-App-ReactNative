@@ -23,7 +23,9 @@ export default function Home() {
 
   async function fetchMovieDetails(movie, id){   
     const { data } = await getMovieDetails(id);
-    navigation.navigate('Movie Description', {movie, data} );
+    navigation.navigate('Movie Description', {movie, data,
+      onGoBack: () => refresh(),
+    });
   }
 
   return (
