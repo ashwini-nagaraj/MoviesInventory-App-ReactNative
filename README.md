@@ -12,12 +12,12 @@ Go to run "npm install yarn" then "yarn start". Also download and install other 
 
 ### Let's begin !! ###
                         
-![image](https://user-images.githubusercontent.com/97677773/151250293-64a2be88-81e6-48b0-b351-f0cb2d27cf5c.png)
+![image](https://user-images.githubusercontent.com/97677773/151613289-858e077b-6ccb-4c39-b938-de26be546803.png)
 
 #### Initial screen - type in the search bar and hit ENTER ####
 
 
-![image](https://user-images.githubusercontent.com/97677773/151250434-59074f15-85eb-42d4-bbe7-86b488141743.png)
+![image](https://user-images.githubusercontent.com/97677773/151613352-7716b615-8155-436c-8947-1eb37f20a24a.png)
 
 ####  You can see the search results containing top 10 movies returned by the API ####
 
@@ -25,7 +25,11 @@ Go to run "npm install yarn" then "yarn start". Also download and install other 
 
 #### Default error screen on wrong movie name search ####
 
-![image](https://user-images.githubusercontent.com/97677773/151250633-ef0929cc-9a52-4efa-b8e9-4257d80cdc17.png)
+![image](https://user-images.githubusercontent.com/97677773/151613460-c34af964-62ad-456d-8c7c-1dd4bde51c37.png)
+
+#### Default error screen when no movie selected and navigate to movie details screen ####
+
+![image](https://user-images.githubusercontent.com/97677773/151613565-1b744b9f-81d1-4ebc-8648-8925a96b7e77.png)
 
 #### On clicking one of the movies, navigates you to description/details screen ####
 
