@@ -9,7 +9,7 @@ import { createMaterialBottomTabNavigator } from '@react-navigation/material-bot
 
 const Tab = createMaterialBottomTabNavigator();
 
-const App = (props) => {
+const App = () => {
   return (
     <NavigationContainer>
       <Tab.Navigator
@@ -22,17 +22,19 @@ const App = (props) => {
       >
           <Tab.Screen 
           name="Movies Inventory App"
-          component={Home}
+          component={Home} 
           options={{
-            tabBarLabel: 'Home',
-            tabBarIcon: ({ color }) => (
-              <MaterialCommunityIcons name="home" color={color} size={28} />
-            ),
+            tabBarIcon: ({ focused , color}) =>  (
+              focused
+              ? <MaterialCommunityIcons name="home" color={color} size={28} />
+              : <MaterialCommunityIcons name="arrow-left" color={color} size={28} />
+           ),
+           tabBarLabel: 'Home'
           }}
            />
           <Tab.Screen
           name="Movie Description"
-          component={MovieDetails}
+          component={MovieDetails}    
           options={{
             tabBarLabel: 'Movie Description',
             tabBarIcon: ({ color }) => (

@@ -1,28 +1,48 @@
 import { StyleSheet, Text, View, ImageBackground} from 'react-native';
 import React from 'react';
+import NOMOVIE_BANNER from '../assets/images/images.jpeg';
 
-const MovieDetails=({route, plot}) =>{
-    const { item } = route.params;
-
-    
+const MovieDetails=({route}) =>{
+    const { movie, data } = route?.params || {}; 
   return (
+    <>
+    {movie ? (
     <View style={styles.container}>
-      <Text key={item.imdbID}  style={styles.title}>About</Text>
+      <Text key={movie.imdbID}  style={styles.title}>About</Text>
         <View style={styles.modal}>
-        <Text style={styles.modalText}>{item.Title}</Text>
+        <Text style={styles.movieTitle}>{movie.Title}</Text>
         <ImageBackground
-        style={{height: 400, width: '100%', backgroundColor: '000'}}
+        key={movie.imdbID}
+        style={{height: 200, width: '100%', backgroundColor: '000'}}
         resizeMode='contain'
-        source={{uri:item.Poster}}
+        source={{uri:movie.Poster}}
         ></ImageBackground>
-        <Text style={styles.modalText}>Year Released: {item.Year}</Text>
-        <Text style={styles.modalText}>Type: {item.Type}</Text>
+        <Text style={styles.modalText}>Year Released: {movie.Year}</Text>
+        {data.Genre!== 'N/A' && (
+        <Text style={styles.modalText}>Genre: {data.Genre}</Text>)}
+          {data.Actors!== 'N/A' && (
+        <Text style={styles.modalText}>Cast: {data.Actors}</Text>)}
+        {data.Director!== 'N/A' && (
+        <Text style={styles.modalText}>Director: {data.Director}</Text>)}
+        {data.Plot!== 'N/A' && (
+        <Text style={styles.modalTextPlot}>{data.Plot}</Text>)}     
+        <Text style={styles.modalText}>Rating: {data.imdbRating}</Text>
         </View>
     </View>
+    ):(<View style={styles.container}>
+      <Text style={styles.title}>No movie selected :(</Text>
+        <ImageBackground
+        style={{height: 350, width: '100%', backgroundColor: '000', marginTop: 50, marginBottom: 20}}
+        resizeMode='contain'
+        source={{uri:NOMOVIE_BANNER}}
+        />
+      </View>)
+        }
+        </>
   );
 }
 
-export default MovieDetails
+export default MovieDetails;
 
   
 const styles = StyleSheet.create({
@@ -42,21 +62,36 @@ const styles = StyleSheet.create({
     color: '#fff',
     alignItems: 'center'
   },
+  movieTitle:{
+    fontSize: 24,
+    fontWeight:'600',
+    marginBottom: 10,
+    color: '#fff',
+    alignItems: 'center'
+  },
   
   modal:{
     padding:20,
     marginBottom:20,
+    alignItems: 'center',
     alignItems: 'center'
   },
   modalText:{
-    fontSize: 24,
+    fontSize: 15,
+    marginTop:10,
+    marginBottom:20,
+    fontWeight: '500',
+    color: '#fff',
+    alignItems: 'center'
+  },
+  modalTextPlot:{
+    fontSize: 15,
     marginTop:10,
     marginBottom:20,
     fontWeight: '500',
     color: '#fff',
     alignItems: 'center'
   }
-
 });
 
 

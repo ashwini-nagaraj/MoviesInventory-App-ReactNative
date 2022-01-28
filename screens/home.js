@@ -1,7 +1,7 @@
-import { StyleSheet, Text, View, TextInput,ScrollView, Image, TouchableHighlight, Modal, TouchableOpacity, Dimensions, ImageBackground, FlatList} from 'react-native';
+import { StyleSheet, View, TextInput,ScrollView, Image,TouchableOpacity, ImageBackground, FlatList} from 'react-native';
 import React, {useState} from 'react';
 import {  Feather } from '@expo/vector-icons'
-import {getMovies} from '../apis/api';
+import {getMovies, getMovieDetails} from '../apis/api';
 import APP_BANNER from '../assets/images/istockphoto-1191001701-612x612.jpeg';
 import ErrorScreen from './error-screen';
 import { useNavigation } from '@react-navigation/native';
@@ -9,17 +9,21 @@ import { useNavigation } from '@react-navigation/native';
 export default function Home() {
   const [state, setState] = useState({
     placeholder:"Enter a movie",
-    results:[],
-    selected:{}
+    results:[]
   });
   const navigation = useNavigation();
 
-  async function fetchMovieDetails(paramMovieName) {
+  async function fetchMovies(paramMovieName) {
     const { data } = await getMovies(paramMovieName);
-    let results = data.Search;
+    let results= data.Search;
     setState(prevState => {
       return {...prevState, results:results}
     });
+  }
+
+  async function fetchMovieDetails(movie, id){   
+    const { data } = await getMovieDetails(id);
+    navigation.navigate('Movie Description', {movie, data} );
   }
 
   return (
@@ -40,7 +44,7 @@ export default function Home() {
                 onChangeText={text=> setState(prevState => {
                   return {...prevState, placeholder:text}
                 })}
-                onSubmitEditing={()=>fetchMovieDetails(state.placeholder)}
+                onSubmitEditing={()=>fetchMovies(state.placeholder)}
                 onFocus= {() => setState(prevState => {
                   return {...prevState, placeholder:''}
                 })}
@@ -53,15 +57,15 @@ export default function Home() {
         </ImageBackground> 
         {state.results ? (
         <FlatList 
-        style={{marginBottom: 30}}
+        style={{marginBottom: 10, marginTop: 40}}
         horizontal={true}
         data={state.results}
-        renderItem={( {item} ) =>  (
-            <TouchableOpacity style={{marginRight: 20}} key={item.imdbID} onPress={()=> navigation.navigate('Movie Description', {item} )}>
+        renderItem={( {item} ) => ( item.Poster!=='N/A' && (
+            <TouchableOpacity style={{marginRight: 20}} key={item.imdbID} onPress={()=> fetchMovieDetails(item, item.imdbID)}>
               <Image source={{uri: item.Poster}} style={{height: 300, width: 200}} />
               <View style={{position: "absolute", height: 5, width: '100%',opacity: 0.8}}></View>
             </TouchableOpacity>
-          )}
+        ))}
         />
         ) : (<ErrorScreen/>)}
     </View>
