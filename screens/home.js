@@ -56,7 +56,8 @@ export default function Home() {
                 />
               < Feather name='search' size={22} color='#666' style={styles.SearchboxIcon} /> 
               </View>
-        </ImageBackground> 
+        </ImageBackground> x
+        
         {state.results ? (
         <FlatList 
         style={{marginBottom: 10, marginTop: 40}}

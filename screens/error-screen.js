@@ -6,7 +6,7 @@ const ErrorScreen = () =>
     return (
         <View style={ styles.container}>
             <Text style={ styles.setColorWhite}>Oh darn. We don't have that movie.</Text>
-            <Text style={ styles.setColorWhite}>Try searching for another movie</Text>
+            <Text style={ styles.setColorWhite}>Try searching for another movie.</Text>
         </View>
     )
 }

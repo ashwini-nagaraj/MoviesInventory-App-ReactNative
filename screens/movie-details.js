@@ -1,7 +1,6 @@
 import { StyleSheet, Text, View, ImageBackground} from 'react-native';
 import React from 'react';
 import NOMOVIE_BANNER from '../assets/images/images.jpeg';
-import { ScrollView } from 'react-native-web';
 
 const MovieDetails=({route}) =>{
     const { movie, data } = route?.params || {}; 
@@ -26,8 +25,9 @@ const MovieDetails=({route}) =>{
         {data.Director!== 'N/A' && (
         <Text style={styles.modalText}>Director: {data.Director}</Text>)}
         {data.Plot!== 'N/A' && (
-        <Text style={styles.modalTextPlot}>{data.Plot}</Text>)}     
-        <Text style={styles.modalText}>Rating: {data.imdbRating}</Text>
+        <Text style={styles.modalTextPlot}>{data.Plot}</Text>)}   
+        {data.imdbRating!== 'N/A' && (  
+        <Text style={styles.modalText}>Rating: {data.imdbRating}</Text>)}
         </View>
     </View>
     ):(<View style={styles.container}>
