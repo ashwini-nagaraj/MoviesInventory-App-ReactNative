@@ -1,0 +1,9 @@
+{
+  "devToolsPort": 19003,
+  "expoServerPort": 19001,
+  "packagerPort": 19001,
+  "webpackServerPort": 19007,
+  "expoServerNgrokUrl": "https://qd-2u7.anonymous.moviesinventory.exp.direct",
+  "packagerNgrokUrl": "https://packager.qd-2u7.anonymous.moviesinventory.exp.direct",
+  "ngrokPid": 43318
+}
