@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import {MaterialCommunityIcons} from '@expo/vector-icons'
+import {MaterialCommunityIcons} from '@expo/vector-icons';
+import {Provider} from 'react-redux';
+import { store } from './redux/store';
 
 import Home from './screens/home'
 import MovieDetails from './screens/movie-details'
@@ -11,6 +13,7 @@ const Tab = createMaterialBottomTabNavigator();
 
 const App = () => {
   return (
+    <Provider store={store}>
     <NavigationContainer>
       <Tab.Navigator
       swipeEnabled
@@ -44,6 +47,7 @@ const App = () => {
            />
       </Tab.Navigator>
     </NavigationContainer>
+    </Provider>
   );
 }
 

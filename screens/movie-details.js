@@ -3,7 +3,7 @@ import React from 'react';
 import NOMOVIE_BANNER from '../assets/images/images.jpeg';
 
 const MovieDetails=({route}) =>{
-    const { movie, data } = route?.params || {}; 
+    const { movie, movieDetails } = route?.params || {}; 
   return (
     <>
     {movie ? (
@@ -18,16 +18,16 @@ const MovieDetails=({route}) =>{
         source={{uri:movie.Poster}}
         ></ImageBackground>
         <Text style={styles.modalText}>Year Relaease: {movie.Year}</Text>
-        {data.Genre!== 'N/A' && (
-        <Text style={styles.modalText}>Genre: {data.Genre}</Text>)}
-          {data.Actors!== 'N/A' && (
-        <Text style={styles.modalText}>Cast: {data.Actors}</Text>)}
-        {data.Director!== 'N/A' && (
-        <Text style={styles.modalText}>Director: {data.Director}</Text>)}
-        {data.Plot!== 'N/A' && (
-        <Text style={styles.modalTextPlot}>{data.Plot}</Text>)}   
-        {data.imdbRating!== 'N/A' && (  
-        <Text style={styles.modalText}>Rating: {data.imdbRating}</Text>)}
+        {movieDetails.Genre!== 'N/A' && (
+        <Text style={styles.modalText}>Genre: {movieDetails.Genre}</Text>)}
+          {movieDetails.Actors!== 'N/A' && (
+        <Text style={styles.modalText}>Cast: {movieDetails.Actors}</Text>)}
+        {movieDetails.Director!== 'N/A' && (
+        <Text style={styles.modalText}>Director: {movieDetails.Director}</Text>)}
+        {movieDetails.Plot!== 'N/A' && (
+        <Text style={styles.modalTextPlot}>{movieDetails.Plot}</Text>)}   
+        {movieDetails.imdbRating!== 'N/A' && (  
+        <Text style={styles.modalText}>Rating: {movieDetails.imdbRating}</Text>)}
         </View>
     </View>
     ):(<View style={styles.container}>
