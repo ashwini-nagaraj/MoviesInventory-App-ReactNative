@@ -4,9 +4,8 @@ It has two simple screens where top 10 movies among search result of API are dis
 to a description screen where movie details are dispalyed.
 
 
-### The site is live at  ###
-
-https://moviesinventory.netlify.app/
+### The site is live at ### 
+[&lt;Link to the site&gt;](https://moviesinventory.netlify.app/)  
 
 ### How to run the project ###
 
