@@ -2,7 +2,11 @@
 In this simple react-native app created using expo, mocks a movie DB/Inventory app. Movies are fetched using OMDb API, with unique API Key. 
 It has two simple screens where top 10 movies among search result of API are displayed and upon clicking on these items, you are navigated 
 to a description screen where movie details are dispalyed.
-  
+
+
+### The site is live at  ###
+
+https://moviesinventory.netlify.app/
 
 ### How to run the project ###
 
