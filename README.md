@@ -45,7 +45,5 @@ Go to run "npm install yarn" then "yarn start". Also download and install other 
 * Include pagination to display all the search results instead of just 1 page by API
 * Of course more UI related changes. There is always room for making it more interactive and responsive!!
 
-### Feedback about exercise ###
-This task was fun and informative since had never worked on react-native apps. It will be great to work on other features like filtering by language etc. Over all it was a great experience and learning opportunity!!
 
 
