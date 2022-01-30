@@ -16,20 +16,16 @@ export default function Home() {
   const {movies, movieDetails} = useSelector(state => state.reducers);
   const dispatch = useDispatch();
 
-  const fetchMovies = (paramMovieName) => {
-    dispatch(getMovies(paramMovieName));
-  }
+  const fetchMovies = (paramMovieName) =>  dispatch(getMovies(paramMovieName));
+  
 
   const fetchMovieDetails =(movie, id) => {
-    const res = dispatch(getMovieDetails(id));
-    movieDetails= res
-    navigation.navigate('Movie Description', {movie, movieDetails,
-          onGoBack: () => refresh(),
-        });
+    dispatch(getMovieDetails(id));
+    navigation.navigate('Movie Description', {movie, movieDetails});
   }
 
   useEffect(() => {
-    
+
   }, []);
 
   return (
@@ -60,7 +56,7 @@ export default function Home() {
                 />
               < Feather name='search' size={22} color='#666' style={styles.SearchboxIcon} /> 
               </View>
-        </ImageBackground> x
+        </ImageBackground> 
         {movies  ? (
         <FlatList 
         style={{marginBottom: 10, marginTop: 40}}

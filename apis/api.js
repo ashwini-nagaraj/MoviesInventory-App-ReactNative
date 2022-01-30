@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL_ENDPOINT = "https://www.omdbapi.com?apikey=5fb20880";
+const BASE_URL_ENDPOINT = "https://www.omdbapi.com?apikey=9c538846";
 
 export  async function getMovies(movieName) {
   let results =[];
